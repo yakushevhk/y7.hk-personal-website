@@ -33,6 +33,7 @@ import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-typescript'
 import 'prismjs/components/prism-bash'
+import { Analytics } from '@vercel/analytics/react'
 
 import React from 'react'
 import { useRouter } from 'next/router'
@@ -45,6 +46,7 @@ if (typeof window !== 'undefined') {
 }
 
 export default function App({ Component, pageProps }) {
+  <Analytics />
   const router = useRouter()
 
   React.useEffect(() => {
