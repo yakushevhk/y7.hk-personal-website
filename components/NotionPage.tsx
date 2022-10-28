@@ -14,6 +14,8 @@ import { Tweet, Twitter } from 'react-static-tweets'
 // core notion renderer
 import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
 
+import { Analytics } from '@vercel/analytics/react'
+
 // utils
 import { getBlockTitle } from 'notion-utils'
 import { mapPageUrl, getCanonicalPageUrl } from 'lib/map-page-url'
@@ -56,6 +58,7 @@ import styles from './styles.module.css'
 const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
 
 const Equation = dynamic(() =>
+<Analytics />
   import('react-notion-x').then((notion) => notion.Equation)
 )
 
