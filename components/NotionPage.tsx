@@ -8,6 +8,9 @@ import { useSearchParam } from 'react-use'
 import BodyClassName from 'react-body-classname'
 import useDarkMode from 'use-dark-mode'
 import { PageBlock } from 'notion-types'
+
+import { Tweet, Twitter } from 'react-static-tweets'
+
 // core notion renderer
 import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
 
@@ -16,7 +19,7 @@ import { getBlockTitle } from 'notion-utils'
 import { mapPageUrl, getCanonicalPageUrl } from 'lib/map-page-url'
 import { mapNotionImageUrl } from 'lib/map-image-url'
 import { getPageDescription } from 'lib/get-page-description'
-
+import { getPageTweet } from 'lib/get-page-tweet'
 import { searchNotion } from 'lib/search-notion'
 import * as types from 'lib/types'
 import * as config from 'lib/config'
@@ -149,7 +152,10 @@ export const NotionPage: React.FC<types.PageProps> = ({
       )
     }
 
-    
+    const tweet = getPageTweet(block, recordMap)
+    if (tweet) {
+      pageAside = <PageActions tweet={tweet} />
+    }
   } else {
     pageAside = <PageSocial />
   }
