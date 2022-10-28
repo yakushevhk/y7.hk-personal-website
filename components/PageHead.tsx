@@ -24,6 +24,7 @@ export const PageHead: React.FC<types.PageProps> = ({ site }) => {
       <meta name='theme-color' content='#EB625A' />
       <meta property='og:type' content='website' />
       <script async src="https://cdn.splitbee.io/sb.js"></script>
+      <script async src="/va/script.js"></script>
     </Head>
   )
 }
