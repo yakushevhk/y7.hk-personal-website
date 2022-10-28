@@ -48,7 +48,6 @@
     "react-dom": "17.0.1",
     "react-icons": "^4.1.0",
     "react-notion-x": "^4.3.1",
-    "react-static-tweets": "^1.0.0",
     "react-use": "^15.3.3",
     "static-tweets": "^1.0.0",
     "use-dark-mode": "^2.3.1"
